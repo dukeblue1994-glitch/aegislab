@@ -1,0 +1,16 @@
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Reports
+report/*.pdf
+report/*.html
+
+# Containers
+infra/*.local.*

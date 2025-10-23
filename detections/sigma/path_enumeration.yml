@@ -1,0 +1,14 @@
+
+title: Suspicious Path Enumeration (Synthetic Demo)
+id: 4b9e1f3a-7f8c-4f6a-8fd0-aaaa0002
+status: stable
+description: Repeated access to /product/* in rapid succession.
+logsource:
+  product: webserver
+detection:
+  selection:
+    http.path|startswith: /product/
+  condition: selection | count() by http.client_ip > 25 within 10m
+level: low
+tags:
+  - attack.discovery

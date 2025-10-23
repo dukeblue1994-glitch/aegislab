@@ -1,0 +1,18 @@
+codes:
+  '200': 265
+  '401': 35
+excessive_401_ips:
+- 10.0.0.5
+generated: '2025-10-23T09:40:22.686911'
+log: http_1761230422.log
+top_paths:
+- - /
+  - 67
+- - /product/1
+  - 66
+- - /search?q=gift
+  - 66
+- - /product/7
+  - 66
+- - /login
+  - 35

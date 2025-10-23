@@ -1,0 +1,19 @@
+
+title: Excessive Failed Logins (Synthetic Demo)
+id: 4b9e1f3a-7f8c-4f6a-8fd0-aaaa0001
+status: stable
+description: Detects bursts of 401 responses to /login in synthetic logs.
+logsource:
+  product: webserver
+detection:
+  selection:
+    http.status: 401
+    http.path: /login
+  condition: selection | count() by http.client_ip > 10 within 5m
+fields:
+  - http.client_ip
+  - http.path
+  - http.status
+level: medium
+tags:
+  - attack.credential_access
