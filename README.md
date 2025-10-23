@@ -1,3 +1,10 @@
+# AegisLab — Synthetic Offensive Emulation & Detection (Local • Safe)
+
+![CI](https://github.com/dukeblue1994-glitch/aegislabs/actions/workflows/ci.yml/badge.svg?branch=main)
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+
+*Built by **Nick Anderson**. This repo spins up a tiny instrumented app, generates **synthetic security events**, runs detection analytics, and auto-produces an executive-style report—no exploits, entirely local, and legally safe.*
 
 # AegisLab — Offensive Emulation & Detection Portfolio (Legal, Lab-Only)
 
