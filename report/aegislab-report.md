@@ -1,20 +1,20 @@
 # AegisLab Report (Synthetic)
 
-**Generated:** 2025-10-23T09:40:22.712890
+**Generated:** 2025-10-23T22:23:09.252886
 
 ## Summary
 
-- Source log: `http_1761230422.log`
-- Status code counts: `{'200': 265, '401': 35}`
-- Anomaly: Excessive failed logins from IP(s): 10.0.0.5
+- Source log: `http_1761276181.log`
+- Status code counts: `{'200': 253, '401': 47}`
+- Anomaly: Excessive failed logins from IP(s): 10.0.0.6, 192.168.1.22
 
 ## Top Paths
 
-- /: 67
-- /product/1: 66
-- /search?q=gift: 66
-- /product/7: 66
-- /login: 35
+- /: 70
+- /product/1: 68
+- /product/7: 61
+- /search?q=gift: 54
+- /login: 47
 
 ## ATT&CK-ish Mapping (Illustrative)
 

@@ -36,9 +36,3 @@ runs detection analytics, and produces an executive-style report automatically.
 
 ## Ethics & Scope
 This repo is for **legal training**. All traffic is synthetic. Do not point any component at systems you do not own or manage with written permission.
-![CI](https://github.com/dukeblue1994-glitch/aegislab/actions/workflows/ci.yml/badge.svg?branch=main)
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green)
-![CI](https://github.com/dukeblue1994-glitch/aegislabs/actions/workflows/ci.yml/badge.svg?branch=main)
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green)
