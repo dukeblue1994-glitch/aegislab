@@ -16,11 +16,12 @@ runs detection analytics, and produces an executive-style report automatically.
 > No exploit code. No unauthorized access. Everything is local and safe.
 
 ## What it shows (at a glance)
+- **DevSecOps Pipeline**: Comprehensive CI/CD with security scanning, linting, and automated testing
 - Reproducible infra-as-code lab (`docker-compose`) with an instrumented demo app.
 - Safe **attack emulation** via synthetic event generator (failed logins, suspicious paths, noisy scans).
 - Detection **rules** (Sigma-style) + analytics notebooks.
 - Automated **report builder** that compiles findings + ATT&CK mapping from run artifacts.
-- CI that lints, tests, and validates Sigma rule syntax.
+- **Security-first CI** that validates Sigma rules, scans for vulnerabilities, and enforces code quality.
 
 ## Quickstart (lab-safe)
 1. Ensure Python 3.11 is installed (Docker optional).
@@ -31,8 +32,10 @@ runs detection analytics, and produces an executive-style report automatically.
    - **Note:** Everything binds to `127.0.0.1` and is for single-machine lab use only.
 
 ## Tech highlights
-- Python 3.11, Docker Compose, OpenSearch (optional), Sigma-like YAML rules, Markdown report generator, unit tests.
-- MIT Licensed. Clear Code of Conduct and Ethics included.
+- **DevSecOps**: Multi-stage CI/CD with security scanning (Bandit, Safety, Trivy), code quality enforcement, and automated testing
+- **Security**: Sigma rule validation, vulnerability scanning, compliance checking, ethical use documentation
+- Python 3.11, Docker Compose, OpenSearch (optional), Sigma-like YAML rules, Markdown report generator, comprehensive test suite.
+- MIT Licensed. Clear Code of Conduct, Security Policy, and Contributing Guidelines included.
 
 ## Ethics & Scope
 This repo is for **legal training**. All traffic is synthetic. Do not point any component at systems you do not own or manage with written permission.
