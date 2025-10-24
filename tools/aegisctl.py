@@ -81,11 +81,17 @@ def validate_sigma():
             ok=False
     return 0 if ok else 1
 
+def demo_advanced():
+    """Run advanced analytics demonstration"""
+    import subprocess, sys
+    demo_script = ROOT / "tools" / "demo_advanced_analytics.py"
+    return subprocess.call([sys.executable, str(demo_script)])
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["synth","analyze","report","validate-sigma"])
+    ap.add_argument("cmd", choices=["synth","analyze","report","validate-sigma","demo-advanced"])
     args = ap.parse_args()
-    return globals()[args.cmd]()
+    return globals()[args.cmd.replace('-', '_')]()
 
 if __name__ == "__main__":
     sys.exit(main())
