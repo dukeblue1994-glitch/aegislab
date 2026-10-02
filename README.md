@@ -1,46 +1,56 @@
-# AegisLab — Synthetic Offensive Emulation & Detection (Local • Safe)
+# AegisLab
 
-![CI](https://github.com/dukeblue1994-glitch/aegislabs/actions/workflows/ci.yml/badge.svg?branch=main)
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green)
+**A local lab for synthetic security events, detection analytics, and reproducible reports.**
 
-*Built by **Nick Anderson**. This repo spins up a tiny instrumented app, generates **synthetic security events**, runs detection analytics, and auto-produces an executive-style report—no exploits, entirely local, and legally safe.*
+[![CI](https://github.com/dukeblue1994-glitch/aegislab/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/dukeblue1994-glitch/aegislab/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](tools/requirements.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-# AegisLab — Offensive Emulation & Detection Portfolio (Legal, Lab-Only)
+Built by [Nick Anderson](https://github.com/dukeblue1994-glitch). AegisLab generates synthetic web application logs, analyzes activity patterns, and produces a report from the resulting evidence. It is a portfolio and learning environment for detection engineering.
 
-**Author:** Nick Anderson  
-**Purpose:** Demonstrate end-to-end red-team *emulation* and blue-team *detection* skills—legally—using a self-contained lab.
-This project spins up a tiny instrumented demo app, generates **synthetic security-relevant logs** (no exploits),
-runs detection analytics, and produces an executive-style report automatically.
+```text
+GENERATE              ANALYZE                 EXPLAIN
+Synthetic logs  -->  Rules + anomalies  -->  Findings + report
+```
 
-> No exploit code. No unauthorized access. Everything is local and safe.
+## Explore the project
 
-## What it shows (at a glance)
-- **Advanced Machine Learning**: Sophisticated threat hunting with Isolation Forest, DBSCAN clustering, and statistical anomaly detection
-- **DevSecOps Pipeline**: Comprehensive CI/CD with security scanning, linting, and automated testing
-- Reproducible infra-as-code lab (`docker-compose`) with an instrumented demo app.
-- Safe **attack emulation** via synthetic event generator (failed logins, suspicious paths, noisy scans).
-- Detection **rules** (Sigma-style) + **interactive Jupyter notebooks** for advanced analytics.
-- Automated **report builder** that compiles findings + ATT&CK mapping from run artifacts.
-- **Security-first CI** that validates Sigma rules, scans for vulnerabilities, and enforces code quality.
+| Area | What it contains |
+| --- | --- |
+| [Emulation](emulation/) | Synthetic security event generation |
+| [Detection rules](detections/) | Sigma-style rule definitions |
+| [Analysis](analysis/) | Notebooks and analytical exploration |
+| [Tools](tools/) | CLI commands, analytics, and report generation |
+| [Reports](report/) | Findings and generated report artifacts |
+| [Infrastructure](infra/) | Optional local Docker environment |
 
-## Quickstart (lab-safe)
-1. Ensure Python 3.11 is installed (Docker optional).
-2. `pip install -r tools/requirements.txt` — install dependencies including advanced ML libraries.
-3. `python3 tools/aegisctl.py synth` — generate synthetic logs into `data/synthetic/`.
-4. `python3 tools/aegisctl.py analyze` — run lightweight analytics to summarize anomalies.
-5. `python3 tools/aegisctl.py demo-advanced` — demonstrate advanced ML-based threat hunting.
-6. `python3 tools/aegisctl.py report` — build `/report/aegislab-report.md` from artifacts.
-7. (Optional) `jupyter notebook analysis/advanced_threat_hunting.ipynb` — interactive ML analysis.
-8. (Optional) `docker compose -f infra/docker-compose.yml up` to run the demo app + dashboards locally.
-   - **Note:** Everything binds to `127.0.0.1` and is for single-machine lab use only.
+## Run the local workflow
 
-## Tech highlights
-- **Advanced Analytics**: Machine Learning (scikit-learn), Statistical Analysis (scipy), Interactive Notebooks (Jupyter), Data Visualization (Plotly)
-- **DevSecOps**: Multi-stage CI/CD with security scanning (Bandit, Safety, Trivy), code quality enforcement, and automated testing
-- **Security**: Sigma rule validation, vulnerability scanning, compliance checking, ethical use documentation
-- Python 3.11, Docker Compose, OpenSearch (optional), MITRE ATT&CK integration, comprehensive test suite.
-- MIT Licensed. Clear Code of Conduct, Security Policy, and Contributing Guidelines included.
+Requires Python 3.11 or newer. From the repository root:
 
-## Ethics & Scope
-This repo is for **legal training**. All traffic is synthetic. Do not point any component at systems you do not own or manage with written permission.
+```bash
+python -m venv .venv
+# Activate .venv for your shell, then:
+python -m pip install -r tools/requirements.txt
+python tools/aegisctl.py synth
+python tools/aegisctl.py analyze
+python tools/aegisctl.py report
+```
+
+Read the generated report at `report/aegislab-report.md`. To explore the additional analytics demonstration:
+
+```bash
+python tools/aegisctl.py demo-advanced
+```
+
+You can also inspect `analysis/advanced_threat_hunting.ipynb`. For the optional local application environment:
+
+```bash
+docker compose -f infra/docker-compose.yml up
+```
+
+## Scope
+
+The lab uses synthetic events for local analysis. Report mappings are illustrative and should be assessed in that context. Keep the environment bound to localhost and use only systems you own or have explicit authorization to test.
+
+See [SECURITY.md](SECURITY.md), [CONTRIBUTING.md](CONTRIBUTING.md), and the [MIT license](LICENSE).
